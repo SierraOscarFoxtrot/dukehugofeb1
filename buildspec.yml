@@ -15,6 +15,7 @@ phases:
       - rm -rf /tmp/*
   build:
     commands:
+      - cd /home/ec2-user/environment/quicksite
       - rm -rf public
       - hugo 
       - hugo deploy
