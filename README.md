@@ -1,18 +1,22 @@
-# dukehugofeb1
-this is a Hugo continuous delivery site
+- forked "dukehugofeb1" repo
+- created new AWS C9 environment 
+- downloaded newest release of hugo via wget
+- unpacked tar.gz, created ~/bin and place hugo binary inside
+- created new hugo site "quickstart"
+- added theme "ananke" to site via git submodule command
+- created post vi hugo command
+- added access rule to ec2 instance to allow port 8080 access
+- ran hugo server locally, and tested access/site availability
+- created s3 bucket, and configured for statis webhosting
+- created bucket policy 
+- modified cloned config.toml to point at correct baseURL, and bucket
+- followed steps in " Hugo Website Continuous Deploy Demo Video" to link local git repo to previously cloned  repo dukehugofeb1, and accept it ass remote master
+- created new AWS codebuild project
+	- pointed at forked githup repo
+	- allowed submodule use
+	- allowed ervice role permissions
+	- set to rebuild on push
+	- atfer project was built, added admin privliges to existing permission policy
+- modified cloned buildspec.yaml to reflect correct version of hugo, and s3 sync target
 
-![Course1-Hugo-CD](https://user-images.githubusercontent.com/58792/107864165-cd2d2580-6e27-11eb-8607-ed0b7d80c995.jpg)
-
-
-## Tutorial
-You can refer to the book Cloud Computing for Data, [Chapter 02](https://paiml.com/docs/home/books/cloud-computing-for-data/chapter02-cloud-foundations/), to get a full walkthrough of the Hugo Continuous Delivery Setup. 
-
-### Coursera Lab
-
-
-
-
-
-## Demo Video
-
-Here is a Hugo Website [Continous Deploy from Zero Video](https://www.youtube.com/watch?v=xiodvLdPnvI)
+demo video: https://youtu.be/n_H1_7K0iEQ
