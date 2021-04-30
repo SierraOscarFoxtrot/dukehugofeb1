@@ -13,7 +13,7 @@ phases:
       - wget https://github.com/gohugoio/hugo/releases/download/v0.82.1/hugo_extended_0.82.1_Linux-64bit.tar.gz
       - tar -xzf hugo_extended_0.82.1_Linux-64bit.tar.gz
       - mv hugo /usr/bin/hugo
-      - cd -
+      - cd /home/ec2-user/environment/quicksite/
       - rm -rf /tmp/*
   build:
      commands:
