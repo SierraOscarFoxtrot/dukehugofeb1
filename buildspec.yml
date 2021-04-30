@@ -18,9 +18,10 @@ phases:
   build:
      commands:
       - rm -rf public
-      - hugo -c /home/ec2-user/environment/quicksite/ 
-      - hugo deploy
+      - hugo
+        #  - hugo deploy
+      - aws s3 sync public/ s3://hugo-cd-aws --delete
   post_build:
     commands:
-      - aws s3 sync --delete public s3://hugo-cd-aws
       - echo Build completed on `date`
+      - echo is this  work?
